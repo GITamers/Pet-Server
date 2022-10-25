@@ -1,7 +1,8 @@
-package net.gitpet.petserver.develop;
+package net.gitpet.petserver.service.crud.develop;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import java.util.Objects;
 
 public class ForTestCrudTest{
 	
@@ -9,18 +10,23 @@ public class ForTestCrudTest{
 	public void useage(){
 		// given
 		UserDTO user = new UserDTO("hello", 21);
-		ForTest<UserDTO> testCrud = new ForTest<>();
+		ForTest<UserDTO> testCrud = new ForTest<UserDTO>();
 		
 		// when
-		UserDTO readed = testCrud.read(()->{return user});
+		UserDTO readed = testCrud.read(new TestExecute<UserDTO>(){
+			@Override
+			public UserDTO execute(){
+				return user;
+			}
+		});
 		
 		// then
-		()-> Assertions.assertEquals(readed, user);
+		Assertions.assertEquals(readed, user);
 	}
 	
 	private static final class UserDTO{
 		
-		public final string name;
+		public final String name;
 		public final int age;
 		
 		private UserDTO(String name, int age){
@@ -30,13 +36,13 @@ public class ForTestCrudTest{
 		
 		@Override
 		public int hashCode(){
-			Objects.hash(name, age);
+			return Objects.hash(name, age);
 		}
 		
 		@Override
 		public boolean equals(Object obj){
-			if!((obj instanceof UserDTO)) return false;
-			UserDTo user = (UserDTO)obj;
+			if(!(obj instanceof UserDTO)) return false;
+			UserDTO user = (UserDTO)obj;
 			return user.name.equals(this.name) && user.age == this.age;
 		}
 		
