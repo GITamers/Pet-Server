@@ -13,6 +13,7 @@ public final class ForTest<V extends Object> implements Crud<V>{
 	@Override
 	public V read(Object... args){
 		TestExecute execute = (TestExecute) args[0];
+
 		return (V)(execute.execute());
 	}
 	
