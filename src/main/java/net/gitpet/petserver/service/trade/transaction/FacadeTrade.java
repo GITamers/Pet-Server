@@ -4,9 +4,9 @@ import net.gitpet.petserver.service.trade.transaction.dto.TradeDTO;
 import net.gitpet.petserver.service.trade.transaction.dto.TradeUserDTO;
 import net.gitpet.petserver.service.trade.transaction.dto.TradeUserPetDTO;
 import net.gitpet.petserver.service.trade.transaction.dto.TradeResultDTO;
-import net.gitpet.petserver.service.trade.transaction.extensible.TradeRepository;
-import net.gitpet.petserver.service.trade.transaction.extensible.TradeUserRepository;
-import net.gitpet.petserver.service.trade.transaction.extensible.UserPetRepository;
+import net.gitpet.petserver.service.trade.transaction.spi.TradeRepository;
+import net.gitpet.petserver.service.trade.transaction.spi.TradeUserRepository;
+import net.gitpet.petserver.service.trade.transaction.spi.UserPetRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;

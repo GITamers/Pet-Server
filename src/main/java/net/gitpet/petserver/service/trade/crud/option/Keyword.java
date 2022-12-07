@@ -1,6 +1,6 @@
 package net.gitpet.petserver.service.trade.crud.option;
 
-import net.gitpet.petserver.service.trade.crud.extensible.TradeFilter;
+import net.gitpet.petserver.service.trade.crud.spi.TradeFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;

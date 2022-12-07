@@ -1,7 +1,7 @@
 package net.gitpet.petserver.service.trade.crud;
 
 import net.gitpet.petserver.service.trade.crud.dto.TradeDTO;
-import net.gitpet.petserver.service.trade.crud.extensible.TradeFilter;
+import net.gitpet.petserver.service.trade.crud.spi.TradeFilter;
 import net.gitpet.petserver.service.trade.crud.option.Keyword;
 import net.gitpet.petserver.service.trade.crud.option.Order;
 

@@ -2,8 +2,8 @@ package net.gitpet.petserver.service.trade.transaction;
 
 import net.gitpet.petserver.service.trade.transaction.dto.TradeDTO;
 import net.gitpet.petserver.service.trade.transaction.dto.TradeUserDTO;
-import net.gitpet.petserver.service.trade.transaction.extensible.TradeRepository;
-import net.gitpet.petserver.service.trade.transaction.extensible.TradeUserRepository;
+import net.gitpet.petserver.service.trade.transaction.spi.TradeRepository;
+import net.gitpet.petserver.service.trade.transaction.spi.TradeUserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

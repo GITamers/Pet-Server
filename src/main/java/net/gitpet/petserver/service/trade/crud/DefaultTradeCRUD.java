@@ -1,8 +1,8 @@
 package net.gitpet.petserver.service.trade.crud;
 
 import net.gitpet.petserver.service.trade.crud.dto.TradeDTO;
-import net.gitpet.petserver.service.trade.crud.extensible.TradeFilter;
-import net.gitpet.petserver.service.trade.crud.extensible.TradeRepository;
+import net.gitpet.petserver.service.trade.crud.spi.TradeFilter;
+import net.gitpet.petserver.service.trade.crud.spi.TradeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
