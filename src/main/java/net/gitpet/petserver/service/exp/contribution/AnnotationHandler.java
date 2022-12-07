@@ -1,6 +1,6 @@
 package net.gitpet.petserver.service.exp.contribution;
 
-import net.gitpet.petserver.service.exp.contribution.spi.annotation.ExpIncrease;
+import net.gitpet.petserver.service.exp.contribution.annotation.ExpIncrease;
 import net.gitpet.petserver.service.util.AnnotationExtractor;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
