@@ -1,7 +1,7 @@
 package net.gitpet.petserver.service.exp.contribution.repository;
 
 import net.gitpet.petserver.domain.User;
-import net.gitpet.petserver.repository.UserRepository;
+import net.gitpet.petserver.repository.UserJpaRepository;
 import net.gitpet.petserver.service.exp.contribution.dto.ExpUserDTO;
 import net.gitpet.petserver.service.exp.contribution.spi.ExpUserRepository;
 
@@ -14,11 +14,11 @@ import java.time.LocalDateTime;
 @Service
 public class UserExpService implements ExpUserRepository {
 
-    private final UserRepository USER_REPOSITORY;
+    private final UserJpaRepository USER_REPOSITORY;
 
     @Autowired
-    UserExpService(UserRepository userRepository){
-        USER_REPOSITORY = userRepository;
+    UserExpService(UserJpaRepository userJPARepository){
+        USER_REPOSITORY = userJPARepository;
     }
 
     @Override

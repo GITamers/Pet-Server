@@ -2,7 +2,8 @@ package net.gitpet.petserver.repository.spiimpl.trade.transaction;
 
 import net.gitpet.petserver.domain.User;
 import net.gitpet.petserver.domain.UserPet;
-import net.gitpet.petserver.repository.UserRepository;
+import net.gitpet.petserver.repository.UserJpaRepository;
+import net.gitpet.petserver.repository.UserPetJpaRepository;
 import net.gitpet.petserver.service.trade.transaction.dto.TradeUserPetDTO;
 import net.gitpet.petserver.service.trade.transaction.spi.UserPetRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,8 +13,8 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class TransactionUserPetService implements UserPetRepository {
 
-    private final net.gitpet.petserver.repository.UserPetRepository USER_PET_REPOSITORY;
-    private final UserRepository USER_REPOSITORY;
+    private final UserPetJpaRepository USER_PET_REPOSITORY;
+    private final UserJpaRepository USER_REPOSITORY;
 
     @Override
     @Transactional(readOnly = true)
@@ -34,10 +35,10 @@ public class TransactionUserPetService implements UserPetRepository {
     }
 
     @Autowired
-    TransactionUserPetService(net.gitpet.petserver.repository.UserPetRepository userPetRepository,
-                              UserRepository userRepository){
-        USER_PET_REPOSITORY = userPetRepository;
-        USER_REPOSITORY = userRepository;
+    TransactionUserPetService(UserPetJpaRepository userPetJpaRepository,
+                              UserJpaRepository userJPARepository){
+        USER_PET_REPOSITORY = userPetJpaRepository;
+        USER_REPOSITORY = userJPARepository;
     }
 
 }

@@ -3,8 +3,8 @@ package net.gitpet.petserver.service.trade.transaction;
 import net.gitpet.petserver.domain.User;
 import net.gitpet.petserver.domain.UserPet;
 import net.gitpet.petserver.repository.TradeRepository;
-import net.gitpet.petserver.repository.UserRepository;
-import net.gitpet.petserver.repository.UserPetRepository;
+import net.gitpet.petserver.repository.UserJpaRepository;
+import net.gitpet.petserver.repository.UserPetJpaRepository;
 import net.gitpet.petserver.service.trade.transaction.dto.TradeResultDTO;
 import net.gitpet.petserver.repository.spiimpl.trade.transaction.TransactionTradeService;
 import net.gitpet.petserver.repository.spiimpl.trade.transaction.TransactionUserPetService;
@@ -31,13 +31,13 @@ public final class FacadeTradeTest {
     private Trade<TradeResultDTO> facadeTrade;
 
     @MockBean
-    private UserRepository userRepository;
+    private UserJpaRepository userJPARepository;
 
     @MockBean
     private TradeRepository tradeRepository;
 
     @MockBean
-    private UserPetRepository userPetRepository;
+    private UserPetJpaRepository userPetJpaRepository;
 
     @Test
     public void TRADE_SUCCESS_TEST(){
@@ -47,9 +47,9 @@ public final class FacadeTradeTest {
         UserPet sellPet = getUserPet(3, seller);
         net.gitpet.petserver.domain.Trade trade = getTrade(4, seller, sellPet, 1000);
 
-        Mockito.when(userRepository.findById(1L)).thenReturn(Optional.of(seller));
-        Mockito.when(userRepository.findById(2L)).thenReturn(Optional.of(buyer));
-        Mockito.when(userPetRepository.findById(3L)).thenReturn(Optional.of(sellPet));
+        Mockito.when(userJPARepository.findById(1L)).thenReturn(Optional.of(seller));
+        Mockito.when(userJPARepository.findById(2L)).thenReturn(Optional.of(buyer));
+        Mockito.when(userPetJpaRepository.findById(3L)).thenReturn(Optional.of(sellPet));
         Mockito.when(tradeRepository.findById(4L)).thenReturn(Optional.of(trade));
 
         // when
@@ -71,9 +71,9 @@ public final class FacadeTradeTest {
         UserPet sellPet = getUserPet(3, seller);
         net.gitpet.petserver.domain.Trade trade = getTrade(4, seller, sellPet, 1000);
 
-        Mockito.when(userRepository.findById(1L)).thenReturn(Optional.of(seller));
-        Mockito.when(userRepository.findById(2L)).thenReturn(Optional.of(buyer));
-        Mockito.when(userPetRepository.findById(3L)).thenReturn(Optional.of(sellPet));
+        Mockito.when(userJPARepository.findById(1L)).thenReturn(Optional.of(seller));
+        Mockito.when(userJPARepository.findById(2L)).thenReturn(Optional.of(buyer));
+        Mockito.when(userPetJpaRepository.findById(3L)).thenReturn(Optional.of(sellPet));
         Mockito.when(tradeRepository.findById(4L)).thenReturn(Optional.of(trade));
 
         // when & then

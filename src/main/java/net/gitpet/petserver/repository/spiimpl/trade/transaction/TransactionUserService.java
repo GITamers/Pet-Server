@@ -1,7 +1,7 @@
 package net.gitpet.petserver.repository.spiimpl.trade.transaction;
 
 import net.gitpet.petserver.domain.User;
-import net.gitpet.petserver.repository.UserRepository;
+import net.gitpet.petserver.repository.UserJpaRepository;
 import net.gitpet.petserver.service.trade.transaction.dto.TradeUserDTO;
 import net.gitpet.petserver.service.trade.transaction.spi.TradeUserRepository;
 
@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class TransactionUserService implements TradeUserRepository {
 
-    private final UserRepository USER_REPOSITORY;
+    private final UserJpaRepository USER_REPOSITORY;
 
     @Override
     @Transactional(readOnly = true)
@@ -29,8 +29,8 @@ public class TransactionUserService implements TradeUserRepository {
     }
 
     @Autowired
-    TransactionUserService(UserRepository userRepository){
-        USER_REPOSITORY = userRepository;
+    TransactionUserService(UserJpaRepository userJPARepository){
+        USER_REPOSITORY = userJPARepository;
     }
 
 }

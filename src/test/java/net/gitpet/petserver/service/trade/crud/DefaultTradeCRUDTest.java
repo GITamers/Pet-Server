@@ -4,8 +4,8 @@ import net.gitpet.petserver.domain.Pet;
 import net.gitpet.petserver.domain.Trade;
 import net.gitpet.petserver.domain.User;
 import net.gitpet.petserver.domain.UserPet;
-import net.gitpet.petserver.repository.UserPetRepository;
-import net.gitpet.petserver.repository.UserRepository;
+import net.gitpet.petserver.repository.UserPetJpaRepository;
+import net.gitpet.petserver.repository.UserJpaRepository;
 import net.gitpet.petserver.service.trade.crud.dto.TradeDTO;
 import net.gitpet.petserver.service.trade.crud.dto.TradePetDTO;
 import net.gitpet.petserver.service.trade.crud.dto.TradeUserDTO;
@@ -39,9 +39,9 @@ public class DefaultTradeCRUDTest {
     @MockBean
     private net.gitpet.petserver.repository.TradeRepository tradeRepository;
     @MockBean
-    private UserRepository userRepository;
+    private UserJpaRepository userJPARepository;
     @MockBean
-    private UserPetRepository userPetRepository;
+    private UserPetJpaRepository userPetJpaRepository;
 
     @Test
     public void FIND_ALL_TRADE_CRUD_TEST(){

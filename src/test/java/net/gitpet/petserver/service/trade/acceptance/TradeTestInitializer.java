@@ -7,8 +7,8 @@ import net.gitpet.petserver.domain.User;
 import net.gitpet.petserver.domain.UserPet;
 import net.gitpet.petserver.repository.PetRepository;
 import net.gitpet.petserver.repository.TradeRepository;
-import net.gitpet.petserver.repository.UserRepository;
-import net.gitpet.petserver.repository.UserPetRepository;
+import net.gitpet.petserver.repository.UserJpaRepository;
+import net.gitpet.petserver.repository.UserPetJpaRepository;
 import net.gitpet.petserver.testannotation.TestBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
@@ -19,8 +19,8 @@ import java.time.LocalDateTime;
 @Transactional
 public class TradeTestInitializer {
 
-    private final UserRepository USER_REPOSITORY;
-    private final UserPetRepository USER_PET_REPOSITORY;
+    private final UserJpaRepository USER_REPOSITORY;
+    private final UserPetJpaRepository USER_PET_REPOSITORY;
     private final TradeRepository TRADE_REPOSITORY;
     private final PetRepository PET_REPOSITORY;
 
@@ -405,12 +405,12 @@ public class TradeTestInitializer {
     }
 
     @Autowired
-    TradeTestInitializer(UserRepository userRepository,
-                         UserPetRepository userPetRepository,
+    TradeTestInitializer(UserJpaRepository userJPARepository,
+                         UserPetJpaRepository userPetJpaRepository,
                          TradeRepository tradeRepository,
                          PetRepository petRepository){
-        USER_REPOSITORY = userRepository;
-        USER_PET_REPOSITORY = userPetRepository;
+        USER_REPOSITORY = userJPARepository;
+        USER_PET_REPOSITORY = userPetJpaRepository;
         TRADE_REPOSITORY = tradeRepository;
         PET_REPOSITORY = petRepository;
     }

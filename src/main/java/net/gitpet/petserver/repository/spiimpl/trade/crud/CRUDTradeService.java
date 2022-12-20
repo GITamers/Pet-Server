@@ -3,8 +3,8 @@ package net.gitpet.petserver.repository.spiimpl.trade.crud;
 import net.gitpet.petserver.domain.Trade;
 import net.gitpet.petserver.domain.User;
 import net.gitpet.petserver.domain.UserPet;
-import net.gitpet.petserver.repository.UserPetRepository;
-import net.gitpet.petserver.repository.UserRepository;
+import net.gitpet.petserver.repository.UserPetJpaRepository;
+import net.gitpet.petserver.repository.UserJpaRepository;
 import net.gitpet.petserver.service.trade.crud.dto.TradeDTO;
 import net.gitpet.petserver.service.trade.crud.spi.TradeRepository;
 import net.gitpet.petserver.repository.spiimpl.trade.crud.mapper.TradeMapper;
@@ -20,16 +20,16 @@ import java.util.List;
 public class CRUDTradeService implements TradeRepository {
 
     private final net.gitpet.petserver.repository.TradeRepository TRADE_REPOSITORY;
-    private final UserRepository USER_REPOSITORY;
-    private final UserPetRepository USER_PET_REPOSITORY;
+    private final UserJpaRepository USER_REPOSITORY;
+    private final UserPetJpaRepository USER_PET_REPOSITORY;
 
     @Autowired
     public CRUDTradeService(net.gitpet.petserver.repository.TradeRepository tradeRepository,
-                     UserRepository userRepository,
-                     UserPetRepository userPetRepository){
+                     UserJpaRepository userJPARepository,
+                     UserPetJpaRepository userPetJpaRepository){
         TRADE_REPOSITORY = tradeRepository;
-        USER_REPOSITORY = userRepository;
-        USER_PET_REPOSITORY = userPetRepository;
+        USER_REPOSITORY = userJPARepository;
+        USER_PET_REPOSITORY = userPetJpaRepository;
     }
 
     @Override
